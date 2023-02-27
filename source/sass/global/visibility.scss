@@ -1,0 +1,34 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+// Переключатели видимости элементов под разные устройства
+
+@media (max-width: v.$tablet-width) {
+  .visibility-tablet,
+  .visibility-desktop {
+    display: none;
+  }
+
+}
+
+@media (min-width: v.$tablet-width) {
+  .visibility-mobile,
+  .visibility-desktop {
+    display: none;
+  }
+
+  .visibility-tablet {
+    display: block;
+  }
+}
+
+@media (min-width: v.$desktop-width) {
+  .visibility-mobile,
+  .visibility-tablet {
+    display: none;
+  }
+
+  .visibility-desktop {
+    display: flex;
+  }
+}

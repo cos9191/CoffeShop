@@ -1,0 +1,172 @@
+@use "./../global/variables" as v;
+
+// visually-hidden
+@mixin visually-hidden() {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+@mixin header-font() {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+}
+
+@mixin flex-centering() {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+// Text
+
+@mixin text--mobile() {
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0;
+}
+
+@mixin text--tablet() {
+  font-size: 20px;
+  line-height: 32px;
+  margin: 0;
+}
+
+@mixin text--desktop() {
+  font-size: 20px;
+  line-height: 32px;
+  margin: 0;
+}
+
+// Title h2
+
+@mixin title-h2--mobile() {
+  font-size: 24px;
+  line-height: 36px;
+  margin: 0;
+}
+
+@mixin title-h2--tablet() {
+  font-size: 42px;
+  line-height: 64px;
+  margin: 0;
+}
+
+@mixin title-h2--desktop() {
+  font-size: 42px;
+  line-height: 64px;
+  margin: 0;
+}
+
+// Title h3
+
+@mixin title-h3--mobile() {
+  font-size: 18px;
+  line-height: 32px;
+  margin: 0;
+}
+
+@mixin title-h3--tablet() {
+  font-size: 24px;
+  line-height: 36px;
+  margin: 0;
+}
+
+@mixin title-h3--desktop() {
+  font-size: 24px;
+  line-height: 36px;
+  margin: 0;
+}
+
+// Title h4
+
+@mixin h4() {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  color: v.$base-primary;
+  margin: 0;
+}
+
+// Title for swiper
+
+@mixin title-swiper--mobile() {
+  font-size: 36px;
+  line-height: 48px;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+@mixin title-swiper--tablet() {
+  font-size: 56px;
+  line-height: 80px;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+@mixin title-swiper--desktop() {
+  font-size: 56px;
+  line-height: 80px;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+// Badge
+
+@mixin badge() {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.04em;
+  color: v.$base-primary;
+  font-weight: 700;
+}
+
+// Price
+
+@mixin price() {
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 600;
+}
+
+@mixin price-old() {
+  font-size: 16px;
+  line-height: 32px;
+  font-weight: 400;
+  color: v.$base-primary;
+  text-decoration-line: line-through;
+}
+
+// Label
+
+@mixin label() {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+@mixin form-options-text() {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@mixin button() {
+  background-color: v.$base-primary;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 20px;
+  color: v.$base-white;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.2s ease-out;
+}

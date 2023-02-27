@@ -1,0 +1,106 @@
+@use "./../global/variables" as v;
+@use "./../global/mixins" as m;
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: v.$tablet-width) {
+    justify-content: end;
+  }
+}
+
+.pagination__list {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.pagination__item:not(:first-child) {
+  margin-left: 20px;
+}
+
+.pagination__text {
+  display: none;
+
+  @media (min-width: v.$tablet-width) {
+    display: block;
+  }
+}
+
+.pagination__button {
+  @include m.form-options-text();
+  padding: 8px;
+  position: relative;
+  min-width: 40px;
+  min-height: 40px;
+  color: v.$base-primary;
+  background-color: v.$base-white;
+
+  @media (min-width: v.$desktop-width) {
+    &:hover,
+    &:focus {
+      color: v.$base-white;
+      background-color: v.$primary-lighter;
+    }
+  }
+
+  &:active {
+    color: v.$base-white;
+    background-color: v.$primary-darker;
+  }
+}
+
+.pagination__button--number {
+  &[aria-current="page"] {
+    font-weight: 600;
+    color: v.$base-black;
+    background-color: transparent;
+    cursor: default;
+  }
+
+  &:disabled {
+    color: v.$base-white;
+    background-color: v.$light-grey;
+    cursor: default;
+  }
+}
+
+.pagination__button--backward,
+.pagination__button--forward {
+  width: 40px;
+
+  @media (min-width: v.$tablet-width) {
+    position: static;
+    width: auto;
+    padding: 8px 20px;
+  }
+
+  &:disabled {
+    color: v.$base-white;
+    background-color: v.$light-grey;
+    cursor: default;
+  }
+}
+
+.pagination__button--backward {
+  margin-right: 20px;
+}
+
+.pagination__button--forward {
+  margin-left: 20px;
+  transform: rotate(180deg);
+
+  @media (min-width: v.$tablet-width) {
+    transform: rotate(0deg);
+  }
+}
+
+.pagination__icon {
+  @media (min-width: v.$tablet-width) {
+    display: none;
+  }
+}

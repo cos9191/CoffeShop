@@ -1,0 +1,73 @@
+@use "./../global/variables" as v;
+@use "./../global/mixins" as m;
+
+.checkbox__button {
+  position: relative;
+  display: block;
+  width: 42px;
+  height: 24px;
+  background-color: v.$base-grey;
+  border: 2px solid v.$base-grey;
+  border-radius: 12px;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: v.$base-white;
+    border-radius: 50%;
+    transform: translate(-19px, -50%);
+    transform-origin: 0 0;
+    transition: all 0.1s ease-out;
+    content: "";
+  }
+}
+
+.checkbox__input:checked + .checkbox__button {
+  border-color: v.$base-primary;
+  background-color: v.$base-primary;
+}
+
+.checkbox__input:checked + .checkbox__button::after {
+  transform: translate(-1px, -50%);
+  transform-origin: 0 0;
+  transition-delay: 0.1s;
+}
+
+.checkbox__text {
+  @include m.form-options-text();
+  padding-left: 10px;
+  cursor: pointer;
+}
+
+.checkbox__input:disabled + .checkbox__button {
+  background-color: v.$light-grey;
+  border: 2px solid v.$light-grey;
+  cursor: default;
+}
+
+.checkbox__input:disabled + .checkbox__button::after {
+  background-color: v.$lightest-grey;
+}
+
+.checkbox__input:disabled:checked + .checkbox__button::after {
+  background-color: v.$base-grey;
+}
+
+.checkbox__input:disabled + .checkbox__button + .checkbox__text {
+  color: v.$base-grey;
+  cursor: default;
+}
+
+@media (min-width: v.$desktop-width) {
+  .checkbox__input:hover + .checkbox__button,
+  .checkbox__input:focus-visible + .checkbox__button {
+    background-color: v.$primary-opacity;
+    border-color: v.$primary-lighter;
+  }
+}

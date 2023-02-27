@@ -1,0 +1,251 @@
+@use "./../global/variables" as v;
+@use "./../global/mixins" as m;
+
+.header {
+  @include m.flex-centering();
+  @include m.header-font();
+  background-color: v.$base-white;
+  padding-left: 20px;
+  padding-right: 60px;
+  min-height: v.$header-height-mobile;
+  position: relative;
+}
+
+.header__nav {
+  @include m.flex-centering();
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+// Блок лого
+
+.header__logo-wrapper {
+  @include m.flex-centering();
+  gap: 20px;
+}
+
+.header__logo-link {
+  @include m.flex-centering();
+  gap: 6px;
+  transition: all 0.2s;
+
+  @media (min-width: v.$desktop-width) {
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.header__logo-title {
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.header__logo-text {
+  font-weight: 400;
+}
+
+.header__nav-list {
+  @include m.flex-centering();
+}
+
+.nav-list__item {
+  @include m.flex-centering();
+  position: relative;
+}
+
+.nav-list__link {
+  @include m.flex-centering();
+  min-width: v.$header-height-mobile;
+  min-height: v.$header-height-mobile;
+  gap: 8px;
+
+  &:active {
+    background-color: v.$base-secondary;
+  }
+
+  @media (min-width: v.$desktop-width) {
+    &:hover,
+    &:focus {
+      color: v.$base-primary;
+    }
+  }
+}
+
+// Burger button
+
+.nav-list__burger-wrapper {
+  @include m.flex-centering();
+  position: absolute;
+  width: v.$header-height-mobile;
+  height: v.$header-height-mobile;
+  right: -60px;
+  cursor: pointer;
+  content: "";
+
+  &:active {
+    background-color: v.$base-secondary;
+  }
+}
+
+.nav-list__burger,
+.nav-list__burger::before,
+.nav-list__burger::after {
+  position: absolute;
+  display: block;
+  width: 16px;
+  height: 1.6px;
+  background-color: v.$base-black;
+  content: "";
+  transition: all 0.2s ease-in-out;
+}
+
+// Burger default state
+
+.nav-list__burger--closed::before {
+  transform: translate(0, -4px);
+}
+
+.nav-list__burger--closed::after {
+  transform: translate(0, 4px);
+}
+
+// Burger cross state
+
+.nav-list__burger--opened::after {
+  display: none;
+}
+
+.nav-list__burger--opened::before {
+  transform: translate(0, 0) rotate(90deg);
+}
+
+.nav-list__burger--opened {
+  transform: translate(0, 0) rotate(45deg);
+}
+
+// NavMenu state for mobile
+
+.header__nav-menu {
+  position: absolute;
+  display: grid;
+  top: v.$header-height-mobile;
+  left: 0;
+  min-width: v.$mobile-width;
+  width: 100%;
+  background-color: v.$base-white;
+  z-index: 2;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-menu__item {
+  @include m.flex-centering();
+  min-height: 58px;
+  height: 100%;
+  box-shadow: 0 1px 0 0 v.$base-secondary;
+}
+
+.nav-menu__item--first {
+  box-shadow: 0 1px 0 0 v.$base-secondary,
+    0 1px 0 0 v.$base-secondary inset;
+}
+
+.nav-menu__link {
+  @include m.flex-centering();
+  width: 100%;
+  height: 100%;
+
+  &:active {
+    background-color: v.$base-secondary;
+  }
+
+  &--current {
+    color: v.$base-primary;
+  }
+
+  @media (min-width: v.$desktop-width) {
+    &:hover,
+    &:focus {
+      color: v.$base-primary;
+    }
+  }
+}
+
+@media (max-width: (v.$tablet-width)) {
+
+  // NavMenu closed state
+  .header__nav-menu--closed {
+    left: - v.$tablet-width;
+  }
+
+  // NavMenu no JS state
+  .header__nav-menu--nojs {
+    top: 0;
+  }
+
+  // Burger no JS state
+  .nav-list__burger--nojs {
+    display: none;
+  }
+}
+
+// Tablet and Desktop styles
+
+@media (min-width: v.$tablet-width) {
+  .header {
+    min-height: 80px;
+    padding-right: 20px;
+  }
+
+  .header__nav-menu {
+    @include m.flex-centering();
+    position: static;
+    z-index: 0;
+    max-width: none;
+    min-width: unset;
+    width: auto;
+    height: 100%;
+    background-color: transparent;
+  }
+
+  .nav-menu__item {
+    min-height: 80px;
+    box-shadow: none;
+  }
+
+  .nav-menu__link {
+    min-height: v.$header-height-tablet;
+    padding: 0 20px;
+  }
+
+  .nav-list__link {
+    min-height: v.$header-height-tablet;
+  }
+
+  .nav-list__item--burger {
+    display: none;
+  }
+
+  .nav-menu__item--current {
+    box-shadow: 0 -2px 0 0 v.$base-primary inset;
+  }
+}
+
+// Desktop only styles
+
+@media (min-width: v.$desktop-width) {
+  .header__nav-list {
+    gap: 20px;
+  }
+
+  .header__nav-menu {
+    gap: 20px;
+  }
+
+  .nav-list__link {
+    padding: 0 20px;
+  }
+}
