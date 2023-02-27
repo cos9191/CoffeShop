@@ -15,9 +15,15 @@ import { deleteAsync } from 'del';
 import browser from 'browser-sync';
 import bemlinter from 'gulp-html-bemlinter';
 import { htmlValidator } from "gulp-w3c-html-validator";
+import ghPages from 'gulp-gh-pages';
 
 const sass = gulpSass(dartSass);
 let isDevelopment = true;
+
+gulp.task('deploy', function() {
+  return gulp.src('./build/**/*')
+    .pipe(ghPages());
+});
 
 export function processMarkup () {
   return gulp.src('source/*.html')
