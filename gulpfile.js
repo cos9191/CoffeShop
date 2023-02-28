@@ -18,12 +18,10 @@ import { htmlValidator } from "gulp-w3c-html-validator";
 import ghPages from 'gulp-gh-pages';
 
 const sass = gulpSass(dartSass);
+
 let isDevelopment = true;
 
-gulp.task('deploy', function() {
-  return gulp.src('./build/**/*')
-    .pipe(ghPages());
-});
+gulp.task('deploy', () => gulp.src('./build/**/*').pipe(ghPages()));
 
 export function processMarkup () {
   return gulp.src('source/*.html')
