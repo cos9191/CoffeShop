@@ -58,6 +58,8 @@
   },
   "type": "module",
   "dependencies": {
-    "swiper": "^9.1.0"
+    "leaflet": "1.9.3",
+    "nouislider": "15.7.0",
+    "swiper": "9.1.0"
   }
 }
