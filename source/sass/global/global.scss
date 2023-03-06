@@ -1,0 +1,69 @@
+/* здесь используйте глобальные селекторы img, body, html и так далее*/
+@use "./../global/variables" as v;
+@use "./../global/mixins" as m;
+
+// Внутренние отступы и границы теперь часть бокса, добавляем плавности состояниям
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  //transition: all 0.2s ease-in-out;
+}
+
+// Cкрываем невидимые элементы
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+// Sticky-footer +  базовый шрифт
+.page {
+  height: 100%;
+  font-family: v.$font;
+  color: v.$base-black;
+}
+
+.page__body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  margin: 0 auto;
+  max-width: v.$desktop-width;
+  box-shadow: 0 5px 15px 0 rgba(0, 1, 1, 0.2);
+}
+
+.main {
+  flex-grow: 1;
+}
+
+// Картинки запираются контейнером + растяжение картинки до границ контейнера
+img {
+  max-width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a,
+select,
+button {
+  color: inherit;
+  text-decoration: none;
+
+  &:focus-visible {
+    outline: 2px solid v.$base-primary;
+  }
+}

@@ -1,0 +1,66 @@
+@use "./../global/variables" as v;
+@use "./../global/mixins" as m;
+
+.select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: v.$tablet-width) {
+    justify-content: end;
+  }
+}
+
+.select__label {
+  @include m.form-options-text();
+  position: relative;
+  font-weight: 600;
+}
+
+.select__input {
+  @include m.form-options-text();
+  width: 163px;
+  margin-left: 4px;
+  padding: 4px 1px 4px 5px;
+  font-family: inherit;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  color: v.$base-primary;
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+  transition: all 0.2s ease-out;
+  appearance: none;
+  cursor: pointer;
+
+  @media (min-width: v.$desktop-width) {
+    margin-left: 11px;
+
+    &:hover,
+    &:focus {
+      background-color: v.$base-secondary;
+    }
+  }
+}
+
+.select__arrow {
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-image: url("./../../img/icons/stack.svg#select-arrow");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transform: translate(-50%, -50%) rotate(0deg);
+  transition: transform 0.2s ease-out;
+  content: "";
+}
+
+@media (min-width: v.$desktop-width) {
+  .select__input:hover:focus + .select__arrow {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+}

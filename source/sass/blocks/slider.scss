@@ -1,0 +1,162 @@
+@use "./../global/variables" as v;
+@use "./../global/mixins" as m;
+
+.slider {
+  height: 2px;
+  padding: 0 13px;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+
+  &:disabled {
+    cursor: default;
+  }
+}
+
+.slider__base {
+  height: 2px;
+  background-color: v.$light-grey;
+}
+
+.slider__connects {
+  height: 4px;
+  top: -1px;
+}
+
+.slider__connect {
+  background-color: v.$primary-lighter;
+}
+
+.slider .slider__touch-area {
+  position: absolute;
+  right: -7px;
+  top: -7px;
+  width: 34px;
+  height: 34px;
+}
+
+.slider .slider__handle {
+  right: -12px;
+  top: -10px;
+  width: 24px;
+  height: 24px;
+  background-color: v.$base-white;
+  border: 2px solid v.$primary-lighter;
+  border-radius: 50%;
+  box-shadow: none;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+
+  &::after {
+    display: none;
+  }
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 16px;
+    height: 16px;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    border-radius: 50%;
+    transition: all 0.2s ease-out;
+    content: "";
+  }
+
+  @media (min-width: v.$desktop-width) {
+    &:hover::before,
+    &:focus::before {
+      background-color: v.$primary-opacity;
+    }
+
+    &:focus {
+      outline: 2px solid v.$base-primary;
+    }
+  }
+
+  &:active {
+    border-color: v.$base-primary;
+  }
+
+  &:active::before {
+    background-color: v.$base-primary;
+  }
+
+  &:focus-visible {
+    outline: 2px solid v.$base-primary;
+  }
+}
+
+.slider[disabled] {
+  cursor: default;
+}
+
+.slider[disabled] .slider__connect {
+  background-color: v.$light-grey;
+}
+
+.slider[disabled] .slider__handle {
+  background-color: v.$lightest-grey;
+  border-color: v.$light-grey;
+  cursor: default;
+
+  &:hover::before,
+  &:focus::before,
+  &:active::before {
+    display: none;
+  }
+}
+
+.input-slider {
+  @include m.form-options-text();
+  width: 118px;
+  padding: 5px 10px;
+  font-family: inherit;
+  font-weight: 500;
+  color: v.$base-black;
+  text-align: center;
+  background-color: v.$base-white;
+  border: 2px solid v.$primary-lighter;
+  border-radius: 4px;
+  appearance: textfield;
+  transition: all 0.2s ease-out;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+  }
+
+  &::placeholder {
+    @include m.form-options-text();
+    font-family: inherit;
+    font-weight: 500;
+    color: v.$base-grey;
+    text-align: center;
+  }
+
+  @media (min-width: v.$tablet-width) {
+    width: 93px;
+    min-height: 40px;
+  }
+
+  @media (min-width: v.$desktop-width) {
+    &:hover {
+      border: 2px solid v.$primary-darker;
+    }
+  }
+
+  &:focus,
+  &:active {
+    outline: none;
+    border: 2px solid v.$primary-darker;
+  }
+
+  &:disabled {
+    background-color: transparent;
+    border: 2px solid v.$light-grey;
+    cursor: default;
+  }
+}
