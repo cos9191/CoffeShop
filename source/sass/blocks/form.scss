@@ -8,11 +8,11 @@
   padding-bottom: 13px;
 
   @media (min-width: v.$tablet-width) {
-    grid-template-columns: 30% 30% 1fr;
+    grid-template-columns: 1fr 30% 30%;
     gap: 30px;
   }
 
-  @media (min-width: v.$desktop-width) {
+  @media (min-width: v.$body-max-width) {
     grid-template-columns: 1fr;
     gap: 24px;
   }
@@ -116,7 +116,7 @@
   height: 135px;
   padding-top: 20px;
 
-  @media (min-width: v.$tablet-width) {
+  @media (min-width: 450px) {
     flex-direction: row;
     justify-content: center;
     margin: 0 auto;

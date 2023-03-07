@@ -60,6 +60,7 @@
   }
 
   .hero__list {
+    @include m.list();
     grid-template-columns: 1fr 1fr;
     gap: 50px 30px;
   }

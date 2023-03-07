@@ -35,7 +35,7 @@
   width: 100%;
   min-height: 100%;
   margin: 0 auto;
-  max-width: v.$desktop-width;
+  max-width: v.$body-max-width;
   box-shadow: 0 5px 15px 0 rgba(0, 1, 1, 0.2);
 }
 
@@ -48,13 +48,6 @@ img {
   max-width: 100%;
   object-fit: cover;
   display: block;
-}
-
-ul,
-ol {
-  list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
 a,

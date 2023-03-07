@@ -27,32 +27,18 @@
 <!-- HEADER -->
 <header class="header">
   <nav class="header__nav">
-    <div class="visibility-mobile">
-      <a class="header__logo-link" href="index.html">
-        <svg class="header__logo" aria-hidden="true" focusable="false" width="32" height="36">
-          <use href="./img/icons/stack.svg#logo"/>
+      <a class="header__logo-link " href="index.html">
+        <svg class="header__logo visibility-mobile" aria-hidden="true" focusable="false" width="32" height="36">
+          <use href="./img/icons/stack.svg#logo_mobile"/>
         </svg>
-      </a>
-    </div>
-    <div class="visibility-tablet">
-      <a class="header__logo-link" href="index.html">
-        <span class="header__logo-title">D</span>
-        <svg class="header__logo" aria-hidden="true" focusable="false" width="32" height="36">
-          <use href="./img/icons/stack.svg#logo"/>
+        <svg class="header__logo visibility-tablet" aria-hidden="true" focusable="false" width="82" height="36">
+          <use href="./img/icons/stack.svg#logo_tablet"/>
         </svg>
-        <span class="header__logo-title">G</span>
-      </a>
-    </div>
-    <div class="header__logo-wrapper visibility-desktop">
-      <a class="header__logo-link" href="index.html">
-        <span class="header__logo-title">DRINK</span>
-        <svg class="header__logo" aria-hidden="true" focusable="false" width="32" height="36">
-          <use href="./img/icons/stack.svg#logo"/>
+        <svg class="header__logo visibility-desktop" aria-hidden="true" focusable="false" width="170" height="36">
+          <use href="./img/icons/stack.svg#logo_desktop"/>
         </svg>
-        <span class="header__logo-title">GO</span>
-        <span class="header__logo-text">Интернет-магазин<br>кофейных напитков</span>
+        <span class="header__logo-text visibility-desktop">Интернет-магазин<br>кофейных напитков</span>
       </a>
-    </div>
     <ul class="header__nav-menu nav-menu header__nav-menu--nojs header__nav-menu--closed">
       <li class="nav-menu__item nav-menu__item--first nav-menu__item--current">
         <a class="nav-menu__link nav-menu__link--current" href="index.html">ГЛАВНАЯ</a>
@@ -86,9 +72,9 @@
       </li>
       <li class="nav-list__item nav-list__item--burger">
         <span class="visually-hidden">Открыть меню</span>
-        <div class="nav-list__burger-wrapper">
+        <button class="nav-list__burger-wrapper">
           <span class="nav-list__burger nav-list__burger--closed"></span>
-        </div>
+        </button>
       </li>
     </ul>
   </nav>
@@ -102,7 +88,6 @@
   <section class="swiper">
     <div class="swiper-wrapper">
       <div class="swiper-slide swiper-slide--flat-white">
-        <div class="swiper__background swiper__background--flat-white visibility-tablet"></div>
         <div class="swiper__img-wrapper">
           <picture>
             <source type="image/webp" media="(min-width: 1440px)"
@@ -135,7 +120,6 @@
         </div>
       </div>
       <div class="swiper-slide swiper-slide--lavender">
-        <div class="swiper__background swiper__background--lavender visibility-tablet"></div>
         <div class="swiper__img-wrapper">
           <picture>
             <source type="image/webp" media="(min-width: 1440px)"
@@ -167,7 +151,6 @@
         </div>
       </div>
       <div class="swiper-slide swiper-slide--espresso">
-        <div class="swiper__background swiper__background--espresso visibility-tablet"></div>
         <div class="swiper__img-wrapper">
           <picture>
             <source type="image/webp" media="(min-width: 1440px)"
@@ -536,50 +519,40 @@
 <footer class="footer">
   <div class="footer__section-wrapper footer__section-wrapper--icons">
     <div class="footer__section footer__section--icons">
-      <div class="footer__logo-wrapper visibility-mobile">
+      <div class="footer__logo-wrapper">
         <a class="footer__logo-link" href="index.html">
-          <span class="footer__logo-title">D</span>
-          <svg class="footer__logo" aria-hidden="true" focusable="false" width="32" height="36">
-            <use href="./img/icons/stack.svg#logo"/>
+          <svg class="footer__logo visibility-mobile" aria-hidden="true" focusable="false" width="32" height="36">
+            <use href="./img/icons/stack.svg#logo_mobile"/>
           </svg>
-          <span class="footer__logo-title">G</span>
+          <svg class="footer__logo visibility-tablet" aria-hidden="true" focusable="false" width="82" height="36">
+            <use href="./img/icons/stack.svg#logo_tablet"/>
+          </svg>
+          <svg class="footer__logo visibility-desktop" aria-hidden="true" focusable="false" width="170" height="36">
+            <use href="./img/icons/stack.svg#logo_desktop"/>
+          </svg>
+          <span class="footer__logo-text visibility-desktop">Интернет-магазин кофейных напитков</span>
         </a>
       </div>
-      <div class="footer__logo-wrapper visibility-tablet">
-        <a class="footer__logo-link" href="index.html">
-          <span class="footer__logo-title">DRINK</span>
-          <svg class="footer__logo" aria-hidden="true" focusable="false" width="32" height="36">
-            <use href="./img/icons/stack.svg#logo"/>
-          </svg>
-          <span class="footer__logo-title">GO</span>
-        </a>
-      </div>
-      <div class="footer__logo-wrapper visibility-desktop">
-        <a class="footer__logo-link" href="index.html">
-          <span class="footer__logo-title">DRINK</span>
-          <svg class="footer__logo" aria-hidden="true" focusable="false" width="32" height="36">
-            <use href="./img/icons/stack.svg#logo"/>
-          </svg>
-          <span class="footer__logo-title">GO</span>
-          <span class="footer__logo-text">Интернет-магазин кофейных напитков</span>
-        </a>
-      </div>
-      <div class="footer__socials socials">
-        <a class="socials__link" href="https://vk.com/htmlacademy">
-          <svg class="footer__logo" fill="currentColor" aria-hidden="true" focusable="false" width="20" height="20">
-            <use href="./img/icons/stack.svg#social_vk"/>
-          </svg>
-        </a>
-        <a class="socials__link" href="https://vk.com/htmlacademy">
-          <svg class="footer__logo" fill="currentColor" aria-hidden="true" focusable="false" width="22" height="22">
-            <use href="./img/icons/stack.svg#social_pinterest"/>
-          </svg>
-        </a>
-        <a class="socials__link" href="https://vk.com/htmlacademy">
-          <svg class="footer__logo" fill="currentColor" aria-hidden="true" focusable="false" width="20" height="20">
-            <use href="./img/icons/stack.svg#social_ok"/>
-          </svg>
-        </a>
+        <div class="footer__socials socials">
+          <a class="socials__link" href="https://vk.com/htmlacademy">
+            <span class="visually-hidden">Мы в Вконтакте.</span>
+            <svg class="footer__logo" fill="currentColor" aria-hidden="true" focusable="false" width="20" height="20">
+              <use href="./img/icons/stack.svg#social_vk"/>
+            </svg>
+          </a>
+          <a class="socials__link" href="https://vk.com/htmlacademy">
+            <span class="visually-hidden">Мы в Pinterest.</span>
+            <svg class="footer__logo" fill="currentColor" aria-hidden="true" focusable="false" width="22" height="22">
+              <use href="./img/icons/stack.svg#social_pinterest"/>
+            </svg>
+          </a>
+          <a class="socials__link" href="https://vk.com/htmlacademy">
+            <span class="visually-hidden">Мы в Одноклассниках.</span>
+            <svg class="footer__logo" fill="currentColor" aria-hidden="true" focusable="false" width="20" height="20">
+              <use href="./img/icons/stack.svg#social_ok"/>
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -645,7 +618,7 @@
     <a class="footer__link footer__link--copyright" href="https://htmlacademy.ru/intensive/adaptive" target="_blank">
       Разработано в HTML Academy
       <svg fill="currentColor" aria-hidden="true" focusable="false" width="12" height="16">
-        <use href="./img/icons/stack.svg#logo_HTML_Academy"/>
+        <use href="./img/icons/stack.svg#logo_html_academy"/>
       </svg>
     </a>
   </div>

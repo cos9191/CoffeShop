@@ -222,23 +222,31 @@
     padding-bottom: 0;
   }
 
-  .swiper__background {
+  .swiper-slide--flat-white::before {
     position: absolute;
     z-index: -1;
     height: 640px;
     width: 100%;
+    background-color: v.$flat-white;
+    content: "";
+  }
 
-    &--flat-white {
-      background-color: v.$flat-white;
-    }
+  .swiper-slide--lavender::before {
+    position: absolute;
+    z-index: -1;
+    height: 640px;
+    width: 100%;
+    background-color: v.$lavender-latte;
+    content: "";
+  }
 
-    &--lavender {
-      background-color: v.$lavender-latte;
-    }
-
-    &--espresso {
-      background-color: v.$espresso;
-    }
+  .swiper-slide--espresso::before {
+    position: absolute;
+    z-index: -1;
+    height: 640px;
+    width: 100%;
+    background-color: v.$espresso;
+    content: "";
   }
 
 

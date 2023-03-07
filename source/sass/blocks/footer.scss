@@ -20,6 +20,7 @@
 }
 
 .footer__list {
+  @include m.list();
   display: grid;
   gap: 16px;
 }
@@ -52,8 +53,9 @@
 
 .footer__logo-link {
   @include m.flex-centering();
-  justify-content: flex-start;
-  gap: 6px;
+  align-items: start;
+  flex-direction: column;
+  gap: 10px;
   transition: all 0.2s;
 
   @media (min-width: v.$desktop-width) {

@@ -49,6 +49,7 @@
 }
 
 .header__nav-list {
+  @include m.list();
   @include m.flex-centering();
 }
 
@@ -79,6 +80,8 @@
 
 .nav-list__burger-wrapper {
   @include m.flex-centering();
+  background-color: transparent;
+  border: none;
   position: absolute;
   width: v.$header-height-mobile;
   height: v.$header-height-mobile;
@@ -130,6 +133,7 @@
 // NavMenu state for mobile
 
 .header__nav-menu {
+  @include m.list();
   position: absolute;
   display: grid;
   top: v.$header-height-mobile;
