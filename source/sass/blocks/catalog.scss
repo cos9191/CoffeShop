@@ -1,6 +1,35 @@
 @use "./../global/variables" as v;
 @use "./../global/mixins" as m;
 
+.catalog {
+  background-color: v.$lightest-grey;
+}
+
+.catalog__wrapper {
+  padding: 50px 20px 44px;
+  max-width: v.$body-max-width;
+  margin: 0 auto;
+
+  @media (min-width: v.$tablet-width) {
+    padding: 80px 20px 90px;
+  }
+
+  @media (min-width: v.$desktop-width) {
+    padding: 100px 40px 120px;
+  }
+}
+
+.catalog__layout {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: v.$body-max-width) {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 20px;
+  }
+}
+
 .catalog__badge {
   @include m.badge();
   @include m.flex-centering();
@@ -20,30 +49,6 @@
   @media (min-width: v.$desktop-width) {
     @include m.title-h2--desktop();
     margin-bottom: 40px;
-  }
-}
-
-.catalog {
-  padding: 50px 20px 44px;
-  background-color: v.$lightest-grey;
-
-  @media (min-width: v.$tablet-width) {
-    padding: 80px 20px 90px;
-  }
-
-  @media (min-width: v.$desktop-width) {
-    padding: 100px 40px 120px;
-  }
-}
-
-.catalog__wrapper {
-  display: flex;
-  flex-direction: column;
-
-  @media (min-width: v.$body-max-width) {
-    display: grid;
-    grid-template-columns: 320px 1fr;
-    gap: 20px;
   }
 }
 

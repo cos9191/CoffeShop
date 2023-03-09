@@ -4,6 +4,8 @@
 .hero {
   display: grid;
   padding: 50px 20px 60px;
+  max-width: v.$body-max-width;
+  margin: 0 auto;
 }
 
 .hero__badge {

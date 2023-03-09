@@ -9,6 +9,9 @@
   padding-right: 60px;
   min-height: v.$header-height-mobile;
   position: relative;
+  width: 100%;
+  max-width: v.$body-max-width;
+  margin: 0 auto;
 }
 
 .header__nav {
