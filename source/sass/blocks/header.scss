@@ -187,7 +187,7 @@
 
   // NavMenu no JS state
   .header__nav-menu--nojs {
-    top: 0;
+    left: 0;
   }
 
   // Burger no JS state
@@ -241,6 +241,11 @@
 // Desktop only styles
 
 @media (min-width: v.$desktop-width) {
+  .header {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
   .header__nav-list {
     gap: 20px;
   }

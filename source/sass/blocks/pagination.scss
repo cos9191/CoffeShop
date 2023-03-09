@@ -2,9 +2,9 @@
 @use "./../global/mixins" as m;
 
 .pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: minmax(10px, auto) minmax(10px, auto) minmax(10px, auto);
 
   @media (min-width: v.$tablet-width) {
     justify-content: end;
@@ -13,20 +13,8 @@
 
 .pagination__list {
   @include m.list();
-  display: flex;
-  justify-content: center;
-}
-
-.pagination__item:not(:first-child) {
-  margin-left: 20px;
-}
-
-.pagination__text {
-  display: none;
-
-  @media (min-width: v.$tablet-width) {
-    display: block;
-  }
+  @include m.flex-centering();
+  gap: 20px;
 }
 
 .pagination__button {
@@ -70,6 +58,7 @@
 .pagination__button--backward,
 .pagination__button--forward {
   width: 40px;
+  height: fit-content;
 
   @media (min-width: v.$tablet-width) {
     position: static;
@@ -85,11 +74,11 @@
 }
 
 .pagination__button--backward {
-  margin-right: 20px;
+  justify-self: end;
 }
 
 .pagination__button--forward {
-  margin-left: 20px;
+  justify-self: start;
   transform: rotate(180deg);
 
   @media (min-width: v.$tablet-width) {

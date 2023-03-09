@@ -19,7 +19,7 @@
 
   &:disabled {
     background-color: v.$base-grey;
-    cursor: default;
+    pointer-events: none;
   }
 }
 

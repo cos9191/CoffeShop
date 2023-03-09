@@ -1,16 +1,18 @@
 @use "./../global/variables" as v;
 @use "./../global/mixins" as m;
 
+// круг
 .radio__button {
   position: relative;
   display: block;
-  width: 24px;
+  min-width: 24px;
   height: 24px;
   border: 2px solid v.$base-grey;
   border-radius: 50%;
   transition: all 0.2s ease-out;
   cursor: pointer;
 
+  // кружочек
   &::after {
     position: absolute;
     top: 50%;
@@ -48,7 +50,6 @@
 
 .radio__input:disabled + .radio__button {
   border: 2px solid v.$light-grey;
-  cursor: default;
 }
 
 .radio__input:disabled + .radio__button::after {
@@ -73,5 +74,17 @@
     transform: scale(1) translate(-50%, -50%);
     transform-origin: 0 0;
     transition-delay: 0.1s;
+  }
+
+  .radio__input:disabled:hover + .radio__button,
+  .radio__input:disabled:focus-visible + .radio__button {
+    border: 2px solid v.$light-grey;
+    cursor: default;
+  }
+
+  .radio__input:disabled:hover + .radio__button::after,
+  .radio__input:disabled:focus-visible + .radio__button::after {
+    opacity: 0;
+    cursor: default;
   }
 }

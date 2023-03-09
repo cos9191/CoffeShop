@@ -4,7 +4,7 @@
 .checkbox__button {
   position: relative;
   display: block;
-  width: 42px;
+  min-width: 42px;
   height: 24px;
   background-color: v.$base-grey;
   border: 2px solid v.$base-grey;
@@ -65,6 +65,14 @@
 }
 
 @media (min-width: v.$desktop-width) {
+  .checkbox__input:disabled:hover + .checkbox__button,
+  .checkbox__input:disabled:focus + .checkbox__button,
+  .checkbox__input:disabled:focus-visible + .checkbox__button,
+  .checkbox__input:disabled:active + .checkbox__button {
+    background-color: v.$light-grey;
+    border: 2px solid v.$light-grey;
+  }
+
   .checkbox__input:hover + .checkbox__button,
   .checkbox__input:focus-visible + .checkbox__button {
     background-color: v.$primary-opacity;
