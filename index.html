@@ -17,8 +17,10 @@
   <link rel="stylesheet" href="./vendor/nouislider/nouislider.css">
   <link rel="stylesheet" href="./vendor/leaflet/leaflet.css">
   <link rel="stylesheet" href="./css/style.css">
-  <link rel="preload" href="./fonts/Montserrat-Regular.woff2" as="font" crossorigin="anonymous">
-  <link rel="preload" href="./fonts/Montserrat-Bold.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" as="font" href="./fonts/Montserrat-Regular.woff2" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="./fonts/Montserrat-Medium.woff2" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="./fonts/Montserrat-SemiBold.woff2" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="./fonts/Montserrat-Bold.woff2" type="font/woff2" crossorigin="anonymous">
 
 </head>
 
@@ -241,9 +243,10 @@
 
   <!-- CATALOG -->
   <section class="catalog">
+    <div class="catalog__wrapper">
     <span class="catalog__badge">КАТАЛОГ</span>
     <h2 class="catalog__title">Каталог кофейных напитков</h2>
-    <div class="catalog__wrapper">
+    <div class="catalog__layout">
 
       <form class="catalog__form form" action="https://echo.htmlacademy.ru/" method="post">
         <div class="form__wrapper">
@@ -484,36 +487,19 @@
                   focusable="false">
               <use href="./img/icons/stack.svg#pagination_arrow"/>
             </svg>
-            <!-- <span class="pagination__text">Вперёд</span> -->
             <span class="visibility-tablet visibility-desktop">Вперёд</span>
           </button>
         </div>
       </div>
     </div>
-
+  </div>
   </section>
 
   <!-- MAP -->
   <section class="map">
     <h2 class="visually-hidden">Мы здесь, на карте.</h2>
-    <picture>
-      <source type="image/webp" media="(min-width: 1440px)"
-              srcset="./img/map_bg/map_bg_desktop.webp, ./img/map_bg/map_bg_desktop@2x.webp 2x">
-      <source type="image/webp" media="(min-width: 768px)"
-              srcset="./img/map_bg/map_bg_tablet.webp, ./img/map_bg/map_bg_tablet@2x.webp 2x">
-      <source type="image/webp"
-              srcset="./img/map_bg/map_bg_mobile.webp, ./img/map_bg/map_bg_mobile@2x.webp 2x">
-      <source media="(min-width: 1440px)"
-              srcset="./img/map_bg/map_bg_desktop.jpg, ./img/map_bg/map_bg_desktop@2x.jpg 2x">
-      <source media="(min-width: 768px)"
-              srcset="./img/map_bg/map_bg_tablet.jpg, ./img/map_bg/map_bg_tablet@2x.jpg 2x">
-      <img class="map__bg-img" src="./img/map_bg/map_bg_mobile.jpg"
-            srcset="./img/map_bg/map_bg_mobile@2x.jpg 2x" loading="lazy" width="320" height="420"
-            alt="Адрес: Санкт-Петербург, набережная реки Карповки, дом 5, литера П.">
-    </picture>
     <div class="map__wrapper" id="map"></div>
   </section>
-
 </main>
 
 <!-- FOOTER -->
