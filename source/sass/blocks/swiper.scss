@@ -2,11 +2,6 @@
 @use "./../global/variables" as v;
 @use "./../global/mixins" as m;
 
-.swiper {
-  width: 100%;
-  // max-width: v.$body-max-width;
-}
-
 .swiper-slide {
   display: grid;
   text-align: center;
@@ -171,7 +166,7 @@
 
 .swiper__icon-arrow {
   position: relative;
-  z-index: 11;
+  z-index: 2;
 }
 
 // Pagination
@@ -181,14 +176,12 @@
 
   @media (min-width: v.$desktop-width) {
     display: block;
-    //bottom: 64px !important;
   }
 }
 
 .swiper__pagination span {
   width: 62px;
   height: 4px;
-  //margin-bottom: -12px !important;
   padding-top: 14px;
   padding-bottom: 14px;
   background-color: transparent;
@@ -227,7 +220,7 @@
     position: absolute;
     z-index: -1;
     height: 640px;
-    width: 100%;
+    width: 100vw;
     background-color: v.$flat-white;
     content: "";
   }
@@ -278,10 +271,15 @@
 // Desktop only styles
 
 @media (min-width: v.$desktop-width) {
+  .swiper-slide--flat-white::before {
+    height: 100%;
+  }
+
   .swiper-slide {
     padding: 30px 80px 84px 105px;
-    grid-template-columns: 600px 1fr;
+    grid-template-columns: minmax(10px, 600px) minmax(10px, 625px);
     gap: 30px;
+    place-content: center;
 
     &--flat-white {
       background-color: v.$flat-white;
@@ -303,6 +301,9 @@
   .swiper__img {
     width: 600px;
     height: 600px;
+    // object-fit: cover;
+    // width: 100%;
+    height: auto;
   }
 
   .swiper__description {
